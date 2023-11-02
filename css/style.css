@@ -37,7 +37,7 @@ main {
 
 header {
     background-color: #0c0b0b;
-    height: 83px;
+    height: 85px;
     width: 100%;
     color: #fdfcf3;
     text-align: center;
@@ -57,20 +57,69 @@ section {
     margin: 0 10% 50px 10%;;  
 }
 
-.menu-btn {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    width: 50px;
-    height: 50px;
-    margin: 15px;
-    border-radius: 50%;
-    background-color: #0c0b0b;
-    color: #fdfcf3;
+.hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    display: none;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 20px;
+    height: 4px;
+    background-color: #5c5c5c;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+  
+.change .bar1 {
+    transform: translate(0, 8px) rotate(-45deg);
+}
+  
+.change .bar2 {
+    opacity: 0;
+}
+  
+.change .bar3 {
+    transform: translate(0, -8px) rotate(45deg);
+}
+
+#menu {
+    background-color: #1d1c1c;
+    border: 2px solid #7a7979;
+    border-radius: 0.75rem;
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    transition: max-height 0.3s ease;
+    left: 2rem;
+    top: 3.5;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu ul li {
+    margin: 5px;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+    color: #fdfcf3;
+}
+
+#menu-btn {
+    padding: 5px 10px 5px 10px;
+    background-color: #1d1c1c;
+    color: #fff;
+    border: none;
+    border-radius: 10%;
+    cursor: pointer;
+    position: fixed;
+    top: 1.35rem;
+    left: 3rem;
+    z-index: 1;
 }
