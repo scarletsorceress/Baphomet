@@ -4,8 +4,37 @@ const menu = document.getElementById('menu');
 
 const isMenuOpen = false;
 
-
 menuButton.addEventListener('click', () => { menuButtonChange(); menuButtonTransition(); }); 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const animationContainer = document.querySelector('.animation-container');
+
+    // Add a class to trigger the animation when the page loads
+    animationContainer.classList.add('show');
+    
+    // Define a function for smooth and slow scrolling
+    function scrollTo(element, to, duration) {
+        if (duration <= 0) return;
+        const difference = to - window.scrollY;
+        const perTick = difference / duration * 10;
+
+        setTimeout(function () {
+            window.scroll(0, window.scrollY + perTick);
+            if (window.scrollY === to) return;
+            scrollTo(element, to, duration - 10);
+        }, 1);
+    }
+    
+    // Fade away the container after a certain duration
+    setTimeout(() => {
+        animationContainer.classList.remove('show');
+        
+        // Scroll down to a specific element or position with slower scrolling
+        scrollTo(window, window.innerHeight, 3000); // Adjust the duration (e.g., 3000 milliseconds) for slower scrolling
+        setTimeout(() => {animationContainer.style.display = 'none'}, 2000);
+    }, 3000);
+});
+
 
 
 function menuButtonTransition() {

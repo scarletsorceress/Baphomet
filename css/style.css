@@ -4,6 +4,7 @@
     display: none;
 }
 
+
 html {
     box-sizing: border-box;
     font-size: 16px;
@@ -25,6 +26,7 @@ body {
     text-align: Center;
     padding: 0;
     overflow-x: hidden;
+    animation: fadeIn 2s ease-in-out;
 }
 
 main {
@@ -87,13 +89,13 @@ section {
 #menu {
     background-color: #1d1c1c;
     border: 2px solid #7a7979;
-    border-radius: 0.75rem;
-    position: absolute;
+    border-radius: 5px;
+    position: fixed;
     z-index: 1;
     padding: 10px;
     transition: max-height 0.3s ease;
     left: 2rem;
-    top: 3.5;
+    top: 5rem;
 }
 
 #menu ul {
@@ -122,4 +124,29 @@ a {
     top: 1.35rem;
     left: 3rem;
     z-index: 1;
+}
+
+
+.animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 0; /* Initially hide the container */
+    transform: translateY(20px); /* Move the container down */
+    transition: opacity 1s, transform 1s;
+}
+
+.animation-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
