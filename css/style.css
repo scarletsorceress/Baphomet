@@ -53,10 +53,11 @@ header {
 .dark {
     background-color: #1d1c1c;
     color: #fdfcf3;
+    font-size: 1.25rem;
 }
 
 section {
-    margin: 0 10% 50px 10%;;  
+    margin: 5% 10% 5% 10%;;  
 }
 
 .hidden {

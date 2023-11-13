@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
         animationContainer.classList.remove('show');
         
         // Scroll down to a specific element or position with slower scrolling
-        scrollTo(window, window.innerHeight, 3000); // Adjust the duration (e.g., 3000 milliseconds) for slower scrolling
-        setTimeout(() => {animationContainer.style.display = 'none'}, 2000);
+        scrollTo(window, window.innerHeight, 2000); // Adjust the duration (e.g., 3000 milliseconds) for slower scrolling
+        setTimeout(() => {animationContainer.style.maxHeight = 0}, 3000);
     }, 3000);
 });
 
