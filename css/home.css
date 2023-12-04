@@ -1,8 +1,5 @@
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-::-webkit-scrollbar {
-    display: none;
-}
 
 
 html {
@@ -11,6 +8,9 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    scrollbar-color: #1d1c1c #0c0b0b;
+    scrollbar-width: thin;
+    
 }
 
 body {
@@ -56,6 +56,19 @@ header {
     font-size: 1.25rem;
 }
 
+.dark p{
+    position: relative;
+    margin: 0 5vh 5vh 5vh;
+}
+
+.red{
+    color: #ff0000;
+}
+
+.green{
+    color: #00ff00;
+}
+
 section {
     margin: 5% 10% 5% 10%;;  
 }
@@ -93,7 +106,8 @@ section {
     border-radius: 5px;
     position: fixed;
     z-index: 1;
-    padding: 10px;
+    padding: 3vh;
+    font-size: 2vh;
     transition: max-height 0.3s ease;
     left: 2rem;
     top: 5rem;
@@ -150,4 +164,8 @@ a {
     100% {
         opacity: 1;
     }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

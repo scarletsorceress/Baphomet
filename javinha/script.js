@@ -1,6 +1,7 @@
 // Get references to the button and menu
 const menuButton = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
+const mainSection = document.getElementById('main-section');
 
 const isMenuOpen = false;
 
@@ -9,10 +10,10 @@ menuButton.addEventListener('click', () => { menuButtonChange(); menuButtonTrans
 document.addEventListener('DOMContentLoaded', function () {
     const animationContainer = document.querySelector('.animation-container');
 
-    // Add a class to trigger the animation when the page loads
+    // evento que aciona a animaçao quando a pagina carrega
     animationContainer.classList.add('show');
     
-    // Define a function for smooth and slow scrolling
+    // definindo funçao pra rolar a pagina de forma lenta e suave
     function scrollTo(element, to, duration) {
         if (duration <= 0) return;
         const difference = to - window.scrollY;
@@ -25,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1);
     }
     
-    // Fade away the container after a certain duration
+    // da um fade no container depois de um certo tempo
     setTimeout(() => {
         animationContainer.classList.remove('show');
         
-        // Scroll down to a specific element or position with slower scrolling
-        scrollTo(window, window.innerHeight, 2000); // Adjust the duration (e.g., 3000 milliseconds) for slower scrolling
+        // rola pra baixo da tela em um elemento especifico, mas rola lentamente
+        scrollTo(mainSection, window.innerHeight, 2000); // Adjust the duration (e.g., 3000 milliseconds) for slower scrolling
         setTimeout(() => {animationContainer.style.maxHeight = 0}, 3000);
     }, 3000);
 });
@@ -39,11 +40,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function menuButtonTransition() {
     if (menu.style.maxHeight === '0px' || menu.style.maxHeight === '') {
-        // Open the menu
+        // abre o menu
         menu.style.display = 'block';
         menu.style.maxHeight = menu.scrollHeight + 'px';
     } else {
-        // Close the menu
+        // fecha o menu
         menu.style.display = 'none';
         menu.style.maxHeight = '0';
     }
@@ -54,10 +55,20 @@ function menuButtonChange() {
     menuButton.classList.toggle('change');
 };
 
-// Close the menu when a menu item is clicked
+// fecha o menu quando um item do menu é clicado
 const menuItems = menu.querySelectorAll('li');
 menuItems.forEach(function(item) {
     item.addEventListener('click', function() {
         menu.style.display = 'none';
     });
 });
+
+
+// fecha o menu quando clica em qualquer lugar da tela
+window.onclick = function(event) {
+    if (event.target !== menuButton) {
+        menu.style.display = 'none';
+        menu.style.maxHeight = '0';
+        menuButton.classList.remove('change');
+    }
+}
