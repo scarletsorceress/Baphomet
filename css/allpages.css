@@ -39,6 +39,11 @@ header {
     z-index: 1;
 }
 
+header a {
+    text-decoration: none;
+    color: #fdfcf3;
+}
+
 .hidden {
     max-height: 0;
     overflow: hidden;
@@ -73,7 +78,7 @@ header {
     position: fixed;
     z-index: 1;
     padding: 3vh;
-    font-size: 2vh;
+    font-size: 2.15vh;
     transition: max-height 0.3s ease;
     left: 2rem;
     top: 5rem;
@@ -89,7 +94,7 @@ header {
     cursor: pointer;
 }
 
-a {
+#menu a {
     text-decoration: none;
     color: #fdfcf3;
 }
@@ -110,7 +115,6 @@ a {
 
 ::-webkit-scrollbar {
     width: 10px;
-    scroll-behavior: smooth;
     scrollbar-width: thin;
     background: #1d1c1c;
 }
@@ -126,6 +130,5 @@ a {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    scroll-behavior: smooth;
     background-color: #5c5c5c;
 }

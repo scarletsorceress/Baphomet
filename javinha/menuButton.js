@@ -1,4 +1,4 @@
-// Get references to the button and menu
+// pega o botao e o menu
 const menuButton = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
 

@@ -33,10 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);
 
         /*
-        seta um item no localStorage depois que a animação foi executada um vez, 
+        seta um item no localStorage depois que a animação foi executada uma vez, 
         desta forma, quando o usuario voltar a pagina,
         não vai precisar ver a animação novamente
         */
+
         localStorage.setItem('animationPlayed', JSON.stringify(true));
 
     } else {
