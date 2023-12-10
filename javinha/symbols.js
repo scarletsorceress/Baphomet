@@ -1,12 +1,14 @@
-window.onscroll = function() {myFunction()};
+var elemento = document.querySelector('.myHeader');
+var ultimoScroll = 0;
 
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
+window.addEventListener('scroll', function() {
+  var atualScroll = window.scrollY;
 
-function myFunction() {
-  if (window.scrollY > sticky) {
-    header.classList.add("sticky");
+  if (atualScroll > ultimoScroll) {
+    elemento.style.display = 'block';
   } else {
-    header.classList.remove("sticky");
+    elemento.style.display = 'none';
   }
-}
+
+  ultimoScroll = atualScroll;
+});

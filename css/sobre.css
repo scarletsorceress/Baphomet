@@ -6,6 +6,10 @@ main {
     overflow-x: hidden;
 }
 
+span {
+    color: #7660f0;
+}
+
 .about {
     background-color: #1d1c1c;
     color: #fdfcf3;
@@ -36,16 +40,16 @@ main {
   }
 
   .carousel-slide img{
-    width: 100%;
-    height: 70vh;
+    width: 30%;
     object-fit: cover;
   }
 
   .carousel-slide p {
-    position: absolute;
-    left: 50%;
-    font-size: 1.5rem;
-    line-height: 2rem;
+    width: 100%;
+    font-size: 5vh;
+    line-height: 1.5rem;
+    justify-content: center;
+    color: #f7ea3f;
   }
   
   .carouselBtn{

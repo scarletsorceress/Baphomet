@@ -10,6 +10,38 @@ table {
     overflow-x: scroll;
 }
 
+.myHeader {
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1;
+    width: 70%;
+    background-color: #1d1c1c;
+    color: #fdfcf3;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    border-bottom: 2px solid #7a7979;
+    margin: 0 auto;
+    padding: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.myHeader ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.myHeader ul li {
+    width: 50%;
+    padding: 5px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+}
+
 .sticky {
     box-sizing: border-box;
     position: fixed;
@@ -56,7 +88,6 @@ td {
 }
 
 td a {
-    text-decoration: none;
     color: #ffea2c;
 }
 
@@ -78,4 +109,46 @@ td ul li {
 .imageTd {
     background-color: #7a7979;
     border-bottom: 2px solid #1d1c1c;
+}
+
+#nota {
+    padding: 0 8vh;
+}
+
+@media screen and (max-width: 720px) {
+
+    main {
+        margin: 90px auto;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .myHeader {
+        display: block;
+        width: 100%;
+    }
+    .sticky {
+        display: none;
+    }
+    table {
+        position: absolute;
+        font-size: 2vh;
+        line-height: 3vh;
+        width: 100%;
+    }
+    th {
+        padding: 5px;
+    }
+    td {
+        padding: 5px;
+    }
+    .imageTd {
+        background-color: #7a7979;
+        border-bottom: 2px solid #1d1c1c;
+    }
+    #nota {
+        padding: 0 4vh;
+    }
 }
